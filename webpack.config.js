@@ -2,7 +2,9 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: { 
+      main: './src/index.js',
+    },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
@@ -36,7 +38,14 @@ module.exports = {
   },
   plugins: [ 
     new HtmlWebpackPlugin({
-        template: './src/index.pug'
+        title: 'Main page',
+        filename: 'index.html',
+        template: './src/pages/index.pug'
+    }),
+    new HtmlWebpackPlugin({
+        title: 'Test page',
+        filename: 'test.html',
+        template: './src/pages/test.pug'
     }),
     new ExtractTextPlugin({filename: 'style.css'})
   ]
