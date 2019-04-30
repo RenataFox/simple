@@ -1,2 +1,2 @@
 import "./scss/main.scss";
-console.log('test new');
+console.log('test new test');
