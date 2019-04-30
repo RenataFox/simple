@@ -1,0 +1,24 @@
+extends ../layouts/home
+block content
+        h1(class='green') index page
+        -
+            var slides = [
+                {
+                    href:'https://twitter.com/?lang=ru',
+                    img:'https://img.icons8.com/material/4ac144/256/twitter.png'
+                },
+                {
+                    href:'https://web.whatsapp.com/',
+                    img:'https://slamdunk.shop/wp-content/uploads/2019/02/whatsapp.png'
+                }
+            ];
+        //slider    
+        for slide in slides
+            a(href=slide.href)
+                img(src=slide.img,class='slider-img')
+
+        -var list=['first','second','third','forth']
+            //list
+            ul
+                each val,index in list
+                    li=index+1+') '+val
